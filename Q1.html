@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+           function PrimeNumber(){
+
+            const num=document.getElementById("numberInput").value;
+  
+
+            if(num<=1){
+                document.getElementById("result").innerText=num+"is not a prime";
+            }
+            let flag=true;
+
+            for(let i=2;i<num-1;i++){
+                if(num%i==0){
+                    flag=false;
+                    break;
+                }
+            }
+
+            if(flag){
+                document.getElementById("result").innerText=num+"is   prime number";
+            }else{
+                document.getElementById("result").innerText=num+"is  not a prime number";
+            }
+
+           }
+    </script>
+</head>
+<body>
+    <h3>Check a prime number</h3>
+    <label for="numberInput">Enter a Number:</label>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="PrimeNumber()">Check</button>
+    <p id="result"></p>
+</body>
+</html>

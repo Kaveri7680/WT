@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function Calculator(opration){
+            const num1=parseFloat(document.getElementById("number1").value);
+            const num2=parseFloat(document.getElementById("number2").value);
+
+            let result;
+
+            if(isNaN(num1) || isNaN(num2)){
+                document.getElementById("result").innerText=result+"please enter a valid Input";
+                return;
+            }
+
+            if(opration =="add"){
+                result=num1+num2;
+            }else if(opration=="sub"){
+                result =num1-num2;
+            }else if(opration=="mul"){
+                result=num1*num2;
+            }else if(opration=="div"){
+                if(num2 === 0){
+                    document.getElementById("result").innerText="not divisible by zero";
+                    return;
+                }
+                result=num1/num2;
+            }
+
+        document.getElementById("result").innerText="Result"+result;
+
+        }
+    </script>
+</head>
+<body>
+    <h3>Calculator</h3>
+    <input type="number" id="number1" placeholder="Enter a 1st number">
+    <input type="number" id="number2" placeholder="Enter a 2nd number">
+
+    <br>
+    <br>
+
+    <button onclick="Calculator('add')">Additon</button>
+    <button onclick="Calculator('sub')">Subtraction</button>
+    <button onclick="Calculator('mul')">Multiplication</button>
+    <button onclick="Calculator('div')">Divistion</button>
+
+    <br>
+    <br>
+
+    <p id="result"></p>
+
+
+
+    
+</body>
+</html>

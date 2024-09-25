@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<Script>
+   function SumAverage(){
+    const arr=[10,20,30,40,50];
+
+
+    let sum=0;
+    for(let i=0;i<arr.length;i++){
+        sum=sum+arr[i];
+    }
+
+    const average=sum/arr.length;
+
+    document.getElementById("sum").innerText="Sum:"+sum;
+    document.getElementById("average").innerText="Average"+average;
+   }
+
+</Script>
+</head>
+<body>
+    <button onclick="SumAverage()">Calculate sum & Average</button>
+
+    <br>
+    <br>
+    <p id="sum">Sum:</p>
+    <p id="average">Average:</p>
+</body>
+</html>

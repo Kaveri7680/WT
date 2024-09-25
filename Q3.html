@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function square(){
+           const number =document.getElementById("inputNumber").value;
+
+           if(isNaN(number) || number==" "){
+            document.getElementById("inputNumber").innerText="Invalid input";
+            return;
+           }
+
+           const square=number*number;
+
+           document.getElementById("resultNumber").value=square;
+        }
+    </script>
+</head>
+<body>
+    <h3>Square of number</h3>
+    <label for="inputNumber">Enter a number:</label>
+    <input type="number" id="inputNumber" placeholder="Enter a number">
+
+    <br>
+    <br>
+    <button onclick="square()">check</button>
+    <br>
+    <br>
+    <label for="resultNumber">Square</label>
+    <input type="number" id="resultNumber" placeholder="result will dispaly heare">
+</body>
+</html>
