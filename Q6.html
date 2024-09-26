@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+          function PositionofVowel(){
+            let Str=document.getElementById("userInput").value.toLowerCase();
+
+            const vowel=['a','e','i','o','u'];
+
+            for(let i=0;i<Str.length;i++){
+                if(vowel.includes(Str[i])){
+                    document.getElementById("result").innerText='the leftmost vowel position '+Str[i];
+                }  
+            }
+            document.getElementById("result").innerText="Vowel does not found"
+
+          }
+    </script>
+</head>
+<body>
+    <label for="userInput">Enter a String</label>
+    <input type="text" id="userInput" placeholder="Enter a String">
+
+    <button onclick="PositionofVowel()">check</button>
+    <p id="result"></p>
+</body>
+</html>
