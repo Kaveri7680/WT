@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+             function reverseNumber(){
+            const number=document.getElementById("userInput").value;
+            const revNum = number.split('').reverse().join('');
+            document.getElementById("result").innerText="Revese Number"+revNum;
+        }
+    </script>
+</head>
+<body>
+    <label for="userInput">Enter a number:</label>
+    <input type="number" id="userInput"placeholder="Enter a number">
+
+    <button onclick="reverseNumber()">check</button>
+    <p id="result"></p>
+</body>
+</html>
