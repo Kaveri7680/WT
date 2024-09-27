@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            height: 300px;
+            width: 400px;
+            padding-left: 10px;
+             padding-top: 10px;
+
+         }
+    </style>
+    <script>
+         function formValidation(){
+            let name=document.getElementById("name").value;
+            let email=document.getElementById("Email").value;
+            let zipcode=document.getElementById("zipcode").value;
+          let error=[];
+          
+          
+
+            if(name ==="")error.push("please enter a name.");
+            if(email===""|| !email.includes("@")|| !email.includes(".") ||email.indexOf("@")<1 )error.push("Enter a valid email");
+            if(zipcode ===""|| isNaN(zipcode) || zipcode.length !==6)error.push("6 digit zip code is required");
+
+            if(error.length>0){
+                document.getElementById("errorMSG").innerHTML=error.join("<br>");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+         }
+    </script>
+</head>
+<body>
+    <center>
+    <div>
+    <form onsubmit="return formValidation()">
+        Name:<input type="text" id="name" placeholder="Enter a name">
+        <br>
+        <br>
+        
+        Email:<input type="text" id="Email" placeholder="Enter a email">
+        <br>
+        <br>
+        ZipCode: <input type="text" id="zipcode">
+        <br>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+
+    <p id="errorMSG" style="color: red;"></p>
+</div>
+</center>
+</body>
+</html>
